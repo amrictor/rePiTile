@@ -26,11 +26,11 @@ def data():
   return jsonify(data), 200
 
 @app.route('/temperature', methods=['GET'])
-def water():
+def temperature():
   return tank.get_temp(), 200
 
 @app.route('/humidity', methods=['GET'])
-def water():
+def humidity():
   return tank.get_humidity(), 200
 
 @app.route('/water', methods=['GET'])
