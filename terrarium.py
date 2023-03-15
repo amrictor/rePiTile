@@ -22,7 +22,7 @@ class Terrarium:
     GPIO.output(TRIG, False)
     time.sleep(2) #waiting for sensor to settle
 
-  def get_water_level(): # in centimeters
+  def get_water_level(self): # in centimeters
     GPIO.output(TRIG, True)
     time.sleep(0.00001)
     GPIO.output(TRIG, False)
@@ -39,15 +39,15 @@ class Terrarium:
     
     return 28 - distance
 
-  def get_humidity():
+  def get_humidity(self):
     humidity = Adafruit_DHT.read_retry(DHT_TYPE, DHT_DATA)[0]
     return humidity
 
-  def get_temp():
+  def get_temp(self):
     temperature = Adafruit_DHT.read_retry(DHT_TYPE, DHT_DATA)[1]
     return temperature
 
-  def get_data():
+  def get_data(self):
     return Adafruit_DHT.read_retry(DHT_TYPE, DHT_DATA)
   
   def get_time_last_misted(self):
