@@ -13,6 +13,7 @@ DHT_TYPE = 11
 
 class Terrarium:
   def __init__(self):
+    self.last_misted = 0
     GPIO.setmode(GPIO.BCM)
 
     GPIO.setup(TRIG, GPIO.OUT)
