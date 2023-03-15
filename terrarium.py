@@ -56,7 +56,7 @@ class Terrarium:
   def mist(self, num_seconds):
     water_level = self.get_water_level()
     if(water_level < 10): #cm
-      raise Exception("Water level low")
+      raise Exception("Water level low", water_level)
     if((time.time() - self.last_misted) < 10):
       raise Exception("Wait to mist")
     GPIO.setup(PUMP_RELAY, GPIO.LOW) # pump on
