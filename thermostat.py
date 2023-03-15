@@ -1,7 +1,12 @@
 from terrarium import Terrarium
 
+tank = Terrarium()
+
 while True:
-  humidity = Terrarium.get_humidity()
+  humidity = tank.get_humidity()
 
   if humidity < 30:
-    Terrarium.mist(6)
+    try:
+      tank.mist(6)
+    except:
+      print("waiting to mist")
