@@ -13,8 +13,8 @@ tank = Terrarium()
 def mist():
   try: 
     tank.mist(3)
-  except(Exception): 
-    return Exception.args, 409
+  except Exception as e: 
+    return repr(e), 409
   else:
     return '', 204
 

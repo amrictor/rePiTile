@@ -21,7 +21,7 @@ class Terrarium:
 
     GPIO.setup(PUMP_RELAY, GPIO.HIGH)
     GPIO.output(TRIG, False)
-    time.sleep(2) #waiting for sensor to settle
+    time.sleep(2) # waiting for sensor to settle
 
   def get_water_level(self): # in centimeters
     GPIO.output(TRIG, True)
@@ -35,7 +35,6 @@ class Terrarium:
       pulse_stop = time.time()
 
     pulse_time = pulse_stop - pulse_start # speed of pulse traveling to the water surface and back 
-
     distance = (pulse_time/2) * 34300 # speed of sound (34300 cm/s) = distance/time
     
     return 28 - distance
