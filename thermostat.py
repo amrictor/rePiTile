@@ -8,5 +8,5 @@ while True:
   if humidity < 30:
     try:
       tank.mist(6)
-    except:
-      print("waiting to mist")
+    except (Exception):
+      print(Exception.args)
