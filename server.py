@@ -35,6 +35,9 @@ def humidity():
 
 @app.route('/water', methods=['GET'])
 def water():
-  return tank.get_water_level(), 200
+  try:
+    return tank.get_water_level(), 200
+  except Exception as e:
+    print(e)
 
 app.run(host='0.0.0.0')
